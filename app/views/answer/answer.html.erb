@@ -1,0 +1,15 @@
+<h1>Stupid Coaching</h1>
+
+<h3> <%= params[:question] %> </h3>
+<h4> -You </h4>
+
+<% if params[:question].downcase.match?(/^i am going to work\.?$/) %>
+ <h3> Great! </h3>
+<% elsif params[:question].match(/\?$/)%>
+ <h3>  Silly question, get dressed and go to work! </h3>
+<% else %>
+ <h3> I don't care, get dressed and go to work! </h3>
+<% end %>
+<h4> -Your Coach </h4>
+
+<%= link_to "Ask another question", ask_path %>
